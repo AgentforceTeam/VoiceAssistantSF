@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: voice_model
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python flask_api.py
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false
+      - key: LIVEKIT_URL
+        sync: false
+      - key: SF_DOMAIN
+        sync: false
+      - key: SF_USERNAME
+        sync: false
+      - key: SF_PASSWORD
+        sync: false
+      - key: SF_SECURITY_TOKEN
+        sync: false
